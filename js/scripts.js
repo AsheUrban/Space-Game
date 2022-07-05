@@ -42,20 +42,26 @@ window.addEventListener("load", function(){
       this.height = 200;
       this.x = 0;
       this.y = this.gameHeight - this.height;
+      this.image = document.getElementById("playerImage");
       this.speed= 0;
     }
     draw(context){
       context.fillStyle = "white";
       context.fillRect(this.x, this.y, this.width, this.height);
+      context.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
     update(input){
       //horizontal movement
       this.x += this.speed;
       if (input.keys.indexOf("ArrowRight") > -1) {
         this.speed = 5;
+      } else if (input.keys.indexOf("ArrowLeft") > -1) {
+        this.speed = -5;
       } else {
         this.speed = 0;
       }
+      if (this.x < 0) this.x = 0;
+      else if (this.x > this.gameWidth - this.width) this.x = this.gameWidth - this.width
     }
 
   }
