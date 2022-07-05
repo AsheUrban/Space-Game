@@ -1,8 +1,8 @@
 window.addEventListener("load", function(){
   const canvas = document.getElementById("canvas-1");
   const ctx = canvas.getContext("2d");
-  canvas.width = 800;
-  canvas.height = 720;
+  canvas.width = 1500;
+  canvas.height = 820;
 
   //Directional controls for Player
 
@@ -38,8 +38,8 @@ window.addEventListener("load", function(){
     constructor(gameWidth, gameHeight) {
       this.gameWidth = gameWidth;
       this.gameHeight = gameHeight;
-      this.width = 200;
-      this.height = 200;
+      this.width = 300;
+      this.height = 300;
       this.x = 0;
       this.y = this.gameHeight - this.height;
       this.image = document.getElementById("playerImage");
@@ -49,8 +49,8 @@ window.addEventListener("load", function(){
     }
 
     draw(context){
-      context.fillStyle = "white";
-      context.fillRect(this.x, this.y, this.width, this.height);
+     // context.fillStyle = "white";
+     // context.fillRect(this.x, this.y, this.width, this.height);
       context.drawImage(this.image, this.x, this.y, this.width, this.height);
     }
 
@@ -93,9 +93,9 @@ window.addEventListener("load", function(){
       this.gameHeight = gameHeight;
       this.image = document.getElementById('backgroundImage');
       this.x = 0;
-      this.y = 1; 
-      this.width = 1200;
-      this.height = 1000;
+      this.y = 15; 
+      this.width = 1500;
+      this.height = 1060;
       this.speed = 2;
     }
     draw(context){
